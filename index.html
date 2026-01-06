@@ -639,23 +639,36 @@
 
 @media (max-width: 879px) {
   nav {
-    background: #000000 !important; /* Fondo negro sólido */
-    border-radius: 1rem;
+    position: fixed !important;
+    top: 52px; /* justo debajo de la barra superior */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000 !important; /* fondo negro sólido */
+    border: none !important;
+    border-radius: 0 !important;
     padding: 1rem 1.2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+    box-shadow: none !important;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  nav.show {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
   nav a {
-    color: #f5f5f5 !important; /* Letras claras, casi blancas */
+    color: #f5f5f5 !important;
     font-weight: 700;
     font-size: 1rem;
     padding: 0.8rem 1rem;
     border-radius: 0.75rem;
-    background: #222222; /* Fondo oscuro sólido para cada enlace */
+    background: #222222;
     margin-bottom: 0.5rem;
     display: block;
   }
   nav a span {
-    color: #cccccc !important; /* Subtítulos en gris claro */
+    color: #cccccc !important;
     font-size: 0.85rem;
     display: block;
     margin-top: 0.15rem;
@@ -671,6 +684,7 @@
     user-select: none;
     background: #000000;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    z-index: 1100;
   }
 }
 
@@ -892,6 +906,7 @@
 
 </body>
 </html>
+
 
 
 
