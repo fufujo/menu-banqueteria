@@ -640,10 +640,16 @@
 @media (max-width: 879px) {
   nav {
     position: fixed;
-    inset: 52px 0 0 0; /* desde 52px abajo, cubre todo el ancho */
-    background: radial-gradient(circle at 0 0, rgba(212,175,55,0.06), rgba(3,3,5,0.96));
-    backdrop-filter: blur(18px);
-    border-top: 1px solid rgba(255,255,255,0.12);
+    top: 52px; /* justo debajo de la barra superior */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000; /* fondo negro sólido */
+    border: none;
+    border-radius: 0;
+    padding: 1.4rem 1.2rem 1.6rem;
+    box-shadow: none;
+    overflow-y: auto;
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
@@ -658,7 +664,6 @@
   .nav-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 1.4rem 1.2rem 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -927,6 +932,7 @@
 
 </body>
 </html>
+
 
 
 
