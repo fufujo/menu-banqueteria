@@ -638,22 +638,45 @@
 }
 
 @media (max-width: 879px) {
-  /* Estilos para móviles */
   nav {
-    background: radial-gradient(circle at 0 0, rgba(212, 175, 55, 0.26), rgba(3, 3, 5, 0.98)) !important;
-    /* O background sólido si prefieres */
-    /* background: #0a0a0c !important; */
+    background: rgba(10, 10, 10, 0.95) !important; /* Fondo casi opaco oscuro */
+    backdrop-filter: none; /* Quitar blur para más nitidez */
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
   }
   nav a {
-    color: var(--text-main) !important;
+    color: #f5deb3 !important; /* Color dorado claro para texto */
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.75rem;
+    background: rgba(33, 33, 33, 0.85);
+    margin-bottom: 0.5rem;
+    display: block;
+    text-shadow: 0 0 4px rgba(0,0,0,0.7);
   }
   nav a span {
-    color: var(--text-muted) !important;
+    color: #d4af37 !important; /* Dorado más intenso para subtítulos */
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.15rem;
+    text-shadow: 0 0 3px rgba(0,0,0,0.6);
   }
   .hamburguesa {
     display: flex !important;
+    font-size: 2.2rem;
+    color: #d4af37;
+    padding: 0.3rem 0.7rem;
+    border: 2px solid #d4af37;
+    border-radius: 9999px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.9);
+    background: rgba(0,0,0,0.6);
   }
 }
+
 </style>
 </head>
 <body>
@@ -872,5 +895,6 @@
 
 </body>
 </html>
+
 
 
