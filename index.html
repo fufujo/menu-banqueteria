@@ -639,25 +639,25 @@
 
 @media (max-width: 879px) {
   nav {
-    position: fixed;
-    top: 52px; /* justo debajo de la barra superior */
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 52px; /* Justo debajo de la barra superior */
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000000; /* fondo negro sólido */
+    background: #000000; /* Fondo negro sólido */
     border: none;
-    border-radius: 0;
+    border-radius: 0; /* Sin bordes para cubrir completamente */
     padding: 1.4rem 1.2rem 1.6rem;
-    box-shadow: none;
-    overflow-y: auto;
-    transform: translateY(-100%);
+    box-shadow: none; /* Sin sombras que creen barras finas */
+    overflow-y: auto; /* Permite scroll si el contenido es largo */
+    transform: translateY(-100%); /* Oculto por defecto */
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.32s ease, opacity 0.32s ease;
-    z-index: 35;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave */
+    z-index: 1000; /* Asegura que esté por encima de todo */
   }
   nav.show {
-    transform: translateY(0);
+    transform: translateY(0); /* Muestra el menú */
     opacity: 1;
     pointer-events: auto;
   }
@@ -667,50 +667,46 @@
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
   }
   nav a {
     text-decoration: none;
-    color: var(--text-main);
+    color: #f5f5f5; /* Letras blancas para contraste */
     font-weight: 600;
     padding: 0.7rem 0.9rem;
     border-radius: 999px;
-    border: 1px solid transparent;
+    border: none; /* Sin bordes adicionales */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+    background: #222222; /* Fondo oscuro sólido para cada enlace */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-size: 0.8rem;
   }
   nav a span {
     font-size: 0.68rem;
-    color: var(--text-muted);
+    color: #cccccc; /* Subtítulos en gris claro */
     text-transform: none;
     letter-spacing: 0;
   }
+  /* Eliminamos el ::after que podría causar problemas */
   nav a::after {
-    content: "↗";
-    font-size: 0.8rem;
-    color: rgba(212,175,55,0.9);
-  }
-  nav a:hover {
-    border-color: rgba(212,175,55,0.8);
-    background: radial-gradient(circle at 0 0, rgba(212,175,55,0.25), rgba(7,7,9,0.95));
-    box-shadow: 0 0 18px rgba(212,175,55,0.45);
+    display: none;
   }
   .hamburguesa {
-    font-size: 1.7rem;
+    font-size: 2.2rem; /* Un poco más grande */
     cursor: pointer;
-    color: var(--text-main);
-    border-radius: 999px;
-    padding: 0.15rem 0.5rem;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: radial-gradient(circle at 0 0, rgba(212,175,55,0.25), rgba(8,8,12,0.95));
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
-    display: flex;
+    color: #f5f5f5; /* Color blanco para el ícono */
+    border-radius: 9999px; /* Bien redondeado */
+    padding: 0.3rem 0.7rem;
+    border: 2px solid #f5f5f5; /* Borde blanco */
+    background: #000000; /* Fondo negro sólido */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* Sombra blanca para destacar */
+    display: flex; /* Asegura que se muestre */
     align-items: center;
     justify-content: center;
+    z-index: 1100; /* Asegura que esté por encima del menú */
   }
 }
 
@@ -932,6 +928,7 @@
 
 </body>
 </html>
+
 
 
 
