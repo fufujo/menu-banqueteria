@@ -643,18 +643,20 @@
     top: 52px; /* justo debajo de la barra superior */
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; /* para ocupar toda la altura disponible */
     background: #000000; /* fondo negro sólido */
     border: none;
     border-radius: 0;
     padding: 1.4rem 1.2rem 1.6rem;
     box-shadow: none;
-    overflow-y: auto;
+    overflow-y: visible; /* permitimos que el contenido se muestre sin scroll */
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 1000;
+    height: auto; /* altura automática para crecer con el contenido */
+    max-height: 100vh; /* no superar la altura de la pantalla */
   }
   nav.show {
     transform: translateY(0);
@@ -666,35 +668,39 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem; /* Aumentamos el espacio entre secciones */
+    gap: 0.8rem;
     width: 100%;
+    height: auto; /* crecer con el contenido */
+    max-height: none; /* sin límite para mostrar todo */
+    overflow-y: visible; /* sin scroll interno */
   }
+  /* Mantener el tamaño de los botones igual que antes */
   nav a {
     text-decoration: none;
-    color: #f5f5f5; /* Letras blancas */
+    color: #f5f5f5;
     font-weight: 600;
-    padding: 1rem 1.2rem; /* Aumentamos el padding para más tamaño */
+    padding: 0.7rem 0.9rem; /* tamaño original */
     border-radius: 999px;
     border: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #222222; /* Fondo oscuro sólido */
+    background: #222222;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 1rem; /* Aumentamos el tamaño de la fuente */
+    font-size: 0.8rem; /* tamaño original */
   }
   nav a span {
-    font-size: 0.85rem; /* Aumentamos el tamaño de la fuente del subtítulo */
+    font-size: 0.68rem; /* tamaño original */
     color: #cccccc;
     text-transform: none;
     letter-spacing: 0;
   }
   nav a::after {
-    display: none; /* Mantenemos oculto el ::after */
+    display: none;
   }
   .hamburguesa {
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* tamaño original */
     cursor: pointer;
     color: #f5f5f5;
     border-radius: 9999px;
@@ -927,6 +933,7 @@
 
 </body>
 </html>
+
 
 
 
