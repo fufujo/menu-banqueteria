@@ -733,8 +733,43 @@
       display: none; /* Eliminamos pseudo-elementos si los hubiera */
     }
   }
+<aside class="hero-side photo-slider">
+  <div class="slider">
+    <img src="img1.jpg" alt="Decoración 1" />
+    <img src="img2.jpg" alt="Decoración 2" />
+    <img src="img3.jpg" alt="Decoración 3" />
+  </div>
+</aside>
 
+<style>
+  .hero-side.photo-slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .slider {
+    display: flex;
+    width: 300%; /* 3 imágenes */
+    animation: slide 15s infinite;
+  }
+
+  .slider img {
+    width: 33.3333%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.3333%); }
+    66% { transform: translateX(-66.6666%); }
+    100% { transform: translateX(0); }
+  }
 </style>
+
 </head>
 <body>
 
@@ -936,6 +971,7 @@
 
 </body>
 </html>
+
 
 
 
