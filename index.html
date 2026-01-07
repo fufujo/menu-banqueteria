@@ -637,83 +637,102 @@
   }
 }
 
-@media (max-width: 879px) {
-  nav {
-    position: fixed;
-    top: 52px; /* justo debajo de la barra superior */
-    left: 0;
-    right: 0;
-    bottom: 0; /* para ocupar toda la altura disponible */
-    background: #000000; /* fondo negro sólido */
-    border: none;
-    border-radius: 0;
-    padding: 1.4rem 1.2rem 1.6rem;
-    box-shadow: none;
-    overflow-y: visible; /* permitimos que el contenido se muestre sin scroll */
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 1000;
-    height: auto; /* altura automática para crecer con el contenido */
-    max-height: 100vh; /* no superar la altura de la pantalla */
+/* --- Estilos para el menú hamburguesa en móvil (Basado en tu código) --- */
+  @media (max-width: 879px) {
+    .hamburguesa { /* Renombramos el ID/clase del botón a .hamburguesa */
+      font-size: 2.2rem;
+      cursor: pointer;
+      color: #f5f5f5;
+      border-radius: 9999px;
+      padding: 0.3rem 0.7rem;
+      border: 2px solid #f5f5f5;
+      background: #000000;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1100;
+      margin-right: 0.5rem; /* Un pequeño margen a la derecha */
+    }
+
+    /* Ocultamos los enlaces normales del menú en móvil */
+    .nav-menu a {
+        display: none;
+    }
+
+    /* Estilos para el contenedor del menú desplegable */
+    .nav-menu { /* Este es el contenedor que se expandirá */
+      position: fixed; /* Se queda fijo en la pantalla */
+      top: 52px; /* justo debajo de la barra superior */
+      left: 0;
+      right: 0;
+      bottom: 0; /* para ocupar toda la altura disponible */
+      background: #000000; /* fondo negro sólido */
+      border: none;
+      border-radius: 0;
+      padding: 1.4rem 1.2rem 1.6rem;
+      box-shadow: none;
+      overflow-y: visible; /* permitimos que el contenido se muestre sin scroll */
+      transform: translateY(-100%); /* Empieza oculto fuera de la pantalla */
+      opacity: 0;
+      pointer-events: none; /* No se puede interactuar con él hasta que aparezca */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 1000;
+      height: auto; /* altura automática para crecer con el contenido */
+      max-height: 100vh; /* no superar la altura de la pantalla */
+      display: flex; /* Lo hacemos flex para alinear .nav-inner */
+      justify-content: center; /* Centramos el contenido interno */
+      align-items: flex-start; /* Alineamos arriba */
+    }
+
+    .nav-menu.show {
+      transform: translateY(0); /* Lo movemos a su posición visible */
+      opacity: 1;
+      pointer-events: auto; /* Hacemos que sea interactuable */
+    }
+
+    /* Estilos para el contenido interno del menú desplegable */
+    .nav-inner {
+      max-width: 1100px; /* Ancho máximo para el contenido interno */
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column; /* Los elementos se apilan verticalmente */
+      gap: 0.8rem; /* Espacio entre elementos */
+      width: 100%;
+      height: auto; /* crecer con el contenido */
+      max-height: none; /* sin límite para mostrar todo */
+      overflow-y: visible; /* sin scroll interno */
+      padding-top: 2rem; /* Añadimos un poco de padding superior para separar del botón */
+    }
+
+    /* Estilos de los enlaces dentro del menú desplegable */
+    .nav-inner a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 600;
+      padding: 0.7rem 0.9rem; /* tamaño original */
+      border-radius: 999px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Para que el span quede al final si lo usas */
+      background: #222222;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem; /* tamaño original */
+    }
+
+    .nav-inner a span {
+      font-size: 0.68rem; /* tamaño original */
+      color: #cccccc;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .nav-inner a::after {
+      display: none; /* Eliminamos pseudo-elementos si los hubiera */
+    }
   }
-  nav.show {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    height: auto; /* crecer con el contenido */
-    max-height: none; /* sin límite para mostrar todo */
-    overflow-y: visible; /* sin scroll interno */
-  }
-  /* Mantener el tamaño de los botones igual que antes */
-  nav a {
-    text-decoration: none;
-    color: #f5f5f5;
-    font-weight: 600;
-    padding: 0.7rem 0.9rem; /* tamaño original */
-    border-radius: 999px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #222222;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.8rem; /* tamaño original */
-  }
-  nav a span {
-    font-size: 0.68rem; /* tamaño original */
-    color: #cccccc;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-  nav a::after {
-    display: none;
-  }
-  .hamburguesa {
-    font-size: 2.2rem; /* tamaño original */
-    cursor: pointer;
-    color: #f5f5f5;
-    border-radius: 9999px;
-    padding: 0.3rem 0.7rem;
-    border: 2px solid #f5f5f5;
-    background: #000000;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
-  }
-}
 
 </style>
 </head>
@@ -933,6 +952,7 @@
 
 </body>
 </html>
+
 
 
 
