@@ -733,65 +733,52 @@
       display: none; /* Eliminamos pseudo-elementos si los hubiera */
     }
   }
-<aside class="hero-side photo-slider">
-  <div class="slider">
-    <!-- Si tienes imágenes, descomenta y usa estas líneas -->
-    <!-- <img src="images/img1.jpg" alt="Decoración 1" /> -->
-    <!-- <img src="images/img2.jpg" alt="Decoración 2" /> -->
-    <!-- <img src="images/img3.jpg" alt="Decoración 3" /> -->
+<head>
+  <!-- Otros metadatos y enlaces -->
+  <style>
+    .hero-side.photo-slider {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 1.2rem;
+      background: linear-gradient(145deg, rgba(27,22,16,0.96), rgba(4,4,6,0.96));
+      border: 1px solid rgba(212,175,55,0.35);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.85),
+        0 0 0 1px rgba(212,175,55,0.35);
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-soft);
+      font-weight: bold;
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      text-align: center;
+    }
 
-    <!-- Texto temporal para mostrar el cubo si no hay imágenes -->
-    <div>Aquí irá el contenido decorativo</div>
-  </div>
-</aside>
+    .slider {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
 
-<style>
-  .hero-side.photo-slider {
-    width: 100%; /* Puedes ajustar el ancho según tu diseño */
-    height: 300px; /* Altura fija para que el cubo sea visible */
-    overflow: hidden;
-    position: relative;
-    border-radius: 1.2rem;
-    background: linear-gradient(145deg, rgba(27,22,16,0.96), rgba(4,4,6,0.96));
-    border: 1px solid rgba(212,175,55,0.35);
-    box-shadow:
-      0 18px 40px rgba(0,0,0,0.85),
-      0 0 0 1px rgba(212,175,55,0.35);
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-soft);
-    font-weight: bold;
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-    text-align: center;
-  }
+    .slider img {
+      width: 33.3333%;
+      object-fit: cover;
+      border-radius: 1.2rem;
+    }
 
-  .slider {
-    display: flex;
-    width: 300%; /* 3 imágenes */
-    animation: slide 15s infinite;
-  }
-
-  .slider img {
-    width: 33.3333%;
-    object-fit: cover;
-    border-radius: 1.2rem;
-  }
-
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-33.3333%); }
-    66% { transform: translateX(-66.6666%); }
-    100% { transform: translateX(0); }
-  }
-</style>
-
-
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-33.3333%); }
+      66% { transform: translateX(-66.6666%); }
+      100% { transform: translateX(0); }
+    }
+  </style>
 </head>
 <body>
-
 <header>
   <div class="top-bar">
     <div class="brand" aria-label="Banquetería">
@@ -836,7 +823,25 @@
         <div><strong>19</strong> alternativas de postres</div>
       </div>
     </article>
+ <!-- Aquí insertamos el slider -->
+      <aside class="hero-side photo-slider">
+        <div class="slider">
+          <!-- Descomenta y usa imágenes reales cuando las tengas -->
+          <!-- <img src="images/img1.jpg" alt="Decoración 1" /> -->
+          <!-- <img src="images/img2.jpg" alt="Decoración 2" /> -->
+          <!-- <img src="images/img3.jpg" alt="Decoración 3" /> -->
 
+          <!-- Texto temporal para ver el cubo si no hay imágenes -->
+          <div>Aquí irá el contenido decorativo</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Resto de secciones como #coctel, #entradas, etc. -->
+  </main>
+
+  <!-- Footer y scripts -->
+</body>
   </section>
 
   <!-- COCTEL -->
